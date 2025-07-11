@@ -1,0 +1,120 @@
+<div class="profile-cont">
+  <div class="basic-profile">
+    <div class="profile-name">Rajalakshmi S</div>
+    <div class="profile-role">Front End Developer</div>
+    <div class="profile-summary">
+      I build sleek, user-friendly web apps using Angular and modern frontend
+      technologies.
+    </div>
+    <div>
+      <nav class="sidebar-nav">
+        <ul>
+          <li
+            [class.active]="activeSection === 'about'"
+            (click)="scrollTo('about')"
+          >
+            <button class="button-icon" matButton="outlined">About</button>
+          </li>
+          <li
+            [class.active]="activeSection === 'experience'"
+            (click)="scrollTo('experience')"
+          >
+            <button class="button-icon" matButton="outlined">Experience</button>
+          </li>
+          <li
+            [class.active]="activeSection === 'skills'"
+            (click)="scrollTo('skills')"
+          >
+            <button class="button-icon" matButton="outlined">
+              Techincal skills
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="social-media-box">
+      <a
+        *ngFor="let media of socialMediaList"
+        target="_blank"
+        rel="noopener noreferrer"
+        [href]="media.href"
+      >
+        <i class="icon-media" [ngClass]="[media.icon, media.class]"></i>
+      </a>
+    </div>
+  </div>
+  <div class="section-prof">
+    <section id="about" #sectionRef>
+      <div class="content-box">
+        <p>
+          I'm a frontend developer passionate about crafting accessible,
+          high-performance user interfaces that blend thoughtful design with
+          solid engineering. With a strong foundation in Angular, TypeScript,
+          and SCSS, I enjoy transforming ideas into smooth, intuitive
+          experiences that work beautifully across devices and users.
+        </p>
+
+        <p>
+          Currently, I’m working as a Technical Specialist at
+          <span class="highlight-text">Accenture</span>, where I contribute to
+          building scalable UI solutions that support enterprise-grade
+          applications, with a growing focus on performance optimization and
+          maintainability.
+        </p>
+
+        <p>
+          Outside of work, I'm actively exploring new technologies like Power BI
+          and React—constantly pushing myself to stay versatile and ahead of the
+          curve. My journey has taken me through a variety of projects and
+          teams, giving me a deep appreciation for
+          <span class="highlight-text"
+            >clean code, collaborative development, and user-centered
+            thinking</span
+          >. I believe the best digital experiences are not just functional, but
+          meaningful, performant, and delightfully crafted.
+        </p>
+
+        <p>
+          When I'm not deep in code, you'll probably find me painting, sketching
+          something new, or planning my next short trip—always recharging my
+          creativity on new <span class="highlight-text">canvas</span> or new
+          place at a time.
+        </p>
+      </div>
+    </section>
+
+    <section id="experience" #sectionRef>
+      <div class="summary">
+        <ng-container *ngFor="let data of professionalSummary">
+          <div class="professional-summary">
+            <div class="year-details">{{ data.year }}</div>
+            <div class="summary-details">
+              <div class="role-details">
+                <div>{{ data.role }}</div>
+                <div>{{ data.companyName }}</div>
+              </div>
+              <div>{{ data.summary }}</div>
+              <div class="skill-set">
+                <ng-container *ngFor="let skill of data.skill">
+                  <button class="skill-btn-icon" matButton="outlined">
+                    {{ skill }}
+                  </button>
+                </ng-container>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </section>
+
+    <section id="skills" #sectionRef>
+      <div class="skill-set">
+        <div *ngFor="let media of skillList">
+          <i [ngClass]="[media.icon]"></i>
+          {{ media.desc }}
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

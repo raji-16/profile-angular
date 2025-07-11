@@ -1,0 +1,13 @@
+<div
+  class="start-process"
+  [ngClass]="{ 'animate-welcome': isStart }"
+  *ngIf="!isShowProfile"
+>
+  <div>{{ welcomeText }}</div>
+  <div *ngIf="isStart" (click)="onStart()">
+    <span class="start-icon material-symbols-outlined">
+      arrow_circle_right</span
+    >
+  </div>
+</div>
+<router-outlet></router-outlet>

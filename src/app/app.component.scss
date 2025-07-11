@@ -1,0 +1,30 @@
+.start-process {
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  animation: typing 3s ease-in-out;
+  flex-direction: column;
+  .click-title {
+    font-size: 1rem;
+  }
+}
+
+@keyframes typing {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.start-icon {
+  cursor: pointer;
+  font-size: 4rem;
+  margin: 1rem;
+}
+.animate-welcome {
+  font-size: 2rem;
+  animation: typing 4s ease-in-out;
+}
